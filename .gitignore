@@ -1,0 +1,13 @@
+# Environment variables — NEVER commit real secrets
+.env
+
+# Dependencies — install with: npm install
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

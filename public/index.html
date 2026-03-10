@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Standup Bot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Standup <span>Bot</span></h1>
+      <p>Drop your notes — AI will format them into a clean summary</p>
+    </header>
+
+    <!-- Input card -->
+    <section class="card" id="input-card">
+      <h2>Your standup notes</h2>
+
+      <div class="input-group">
+        <label for="input-yesterday" class="input-label label-yesterday">
+          <span class="dot"></span> Yesterday
+        </label>
+        <textarea
+          id="input-yesterday"
+          placeholder="What did you complete yesterday?"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="input-today" class="input-label label-today">
+          <span class="dot"></span> Today
+        </label>
+        <textarea
+          id="input-today"
+          placeholder="What are you working on today?"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="input-blockers" class="input-label label-blockers">
+          <span class="dot"></span> Blockers
+        </label>
+        <textarea
+          id="input-blockers"
+          placeholder="Anything blocking your progress?"
+          rows="2"
+        ></textarea>
+      </div>
+
+      <div id="error-banner"></div>
+
+      <button id="submit-btn" onclick="submitStandup()">
+        <div class="spinner" id="spinner"></div>
+        <span id="btn-label">Generate Summary</span>
+      </button>
+    </section>
+
+    <!-- AI summary card -->
+    <section class="card" id="summary-card">
+      <h2>AI Summary</h2>
+      <div id="summary-output"></div>
+    </section>
+
+    <!-- History card -->
+    <section class="card">
+      <h2>Recent Standups</h2>
+      <div id="history-list">
+        <p class="empty-state">No standups yet — submit your first one above.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
